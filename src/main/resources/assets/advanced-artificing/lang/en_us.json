@@ -1,0 +1,7 @@
+{
+  "itemGroup.advanced-artificing": "Advanced Artificing",
+  "item.advanced-artificing.suspicious_substance": "Suspicious Substance",
+  "item.advanced-artificing.mana_bottle": "Mana Bottle",
+  "itemTooltip.advanced-artificing.mana_bottle.info": "Mana: %1$s",
+  "block.advanced-artificing.creative_mana_source": "Creative Mana Source"
+}

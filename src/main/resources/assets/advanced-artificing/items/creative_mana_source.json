@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model":"advanced-artificing:block/creative_mana_source"
+  }
+}
