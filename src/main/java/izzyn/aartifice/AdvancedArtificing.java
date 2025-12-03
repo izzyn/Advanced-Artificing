@@ -2,6 +2,7 @@ package izzyn.aartifice;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +22,14 @@ public class AdvancedArtificing implements ModInitializer {
         ModItems.initialize();
         ModBlocks.initialize();
         ModComponents.initialize();
+        ModBlockEntities.initialize();
+        ModMenus.initialize();
 
 		LOGGER.info("Hello Fabric world!");
 	}
+    public static ResourceLocation identifier(String path) {
+
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
 }

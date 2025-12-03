@@ -1,6 +1,8 @@
 package izzyn.aartifice.items;
 
+import izzyn.aartifice.Mana;
 import izzyn.aartifice.ModComponents;
+import izzyn.aartifice.builders.ManaBuilder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -25,15 +27,16 @@ public class ManaBottle extends Item {
         if (world.isClientSide()){
             return InteractionResult.SUCCESS;
         }
-        int count = stack.getOrDefault(ModComponents.MANA_COMPONENT_TYPE, 0);
-        stack.set(ModComponents.MANA_COMPONENT_TYPE, ++count);
+        Mana count = stack.getOrDefault(ModComponents.MANA_COMPONENT_TYPE, Mana.builder().buildMana());
+        ++count.Purity;
+        stack.set(ModComponents.MANA_COMPONENT_TYPE, count);
         return InteractionResult.SUCCESS;
     }
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
 
-        int count = stack.getOrDefault(ModComponents.MANA_COMPONENT_TYPE, 0);
-        textConsumer.accept(Component.translatable("itemTooltip.advanced-artificing.mana_bottle.info", count).withStyle(ChatFormatting.AQUA));
+        Mana count = stack.getOrDefault(ModComponents.MANA_COMPONENT_TYPE, Mana.builder().buildMana());
+        textConsumer.accept(Component.translatable("itemTooltip.advanced-artificing.mana_bottle.info", count.Purity).withStyle(ChatFormatting.AQUA));
     }
 }

@@ -17,7 +17,7 @@ import java.util.function.Function;
 
 public class ModItems {
     public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance", Item::new, new Item.Properties());
-    public static final Item MANA_BOTTLE = register("mana_bottle", ManaBottle::new, new Item.Properties().component(ModComponents.MANA_COMPONENT_TYPE,0));
+    public static final Item MANA_BOTTLE = register("mana_bottle", ManaBottle::new, new Item.Properties().component(ModComponents.MANA_COMPONENT_TYPE, new Mana(1,1,1,1,1) ));
 
 
     public static final ResourceKey<CreativeModeTab> CUSTOM_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ResourceLocation.fromNamespaceAndPath(AdvancedArtificing.MOD_ID, "item_group"));
